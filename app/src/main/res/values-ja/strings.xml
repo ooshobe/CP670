@@ -3,4 +3,8 @@
     <string name="app_name">課題1</string>
     <string name="hello_message">こんにちは世界</string>
     <string name="ButtonText">I\'m a Button</string>
+    <string name="Login">ログインする</string>
+    <string name="LoginEmailAddress">Login Name</string>
+    <string name="Password">Password</string>
+    <string name="PasswordTextBox">Enter Password</string>
 </resources>
