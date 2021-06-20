@@ -7,4 +7,5 @@
     <string name="LoginEmailAddress">Login Name</string>
     <string name="Password">Password</string>
     <string name="PasswordTextBox">Enter Password</string>
+    <string name="Switch">What does this do ?</string>
 </resources>
