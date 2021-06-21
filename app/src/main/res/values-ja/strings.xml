@@ -8,4 +8,7 @@
     <string name="Password">Password</string>
     <string name="PasswordTextBox">Enter Password</string>
     <string name="Switch">What does this do ?</string>
+    <string name="ChatButton">Start Chat</string>
+    <string name="SendButton">Send</string>
+    <string name="ChatTextBox">Enter Message</string>
 </resources>

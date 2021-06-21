@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/assignment1_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".ChatWindow"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".ListItemsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
