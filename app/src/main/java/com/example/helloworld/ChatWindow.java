@@ -3,10 +3,12 @@ package com.example.helloworld;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,18 +25,20 @@ public class ChatWindow extends AppCompatActivity {
     ListView ChatView;
     EditText ChatText;
     Button send;
-    ChatAdapter messageAdapter;
+    ChatAdapter  messageAdapter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ChatText = (EditText) findViewById(R.id.ChatBox);
-        send = (Button) findViewById(R.id.SendChat);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_window);
 
-        send.setOnClickListener(mSendListener);
+        ChatText = (EditText) findViewById(R.id.ChatBox);
+        send = (Button) findViewById(R.id.SendChat);
+        ChatView = (ListView) findViewById(R.id.ConversList);
+        ChatMessages= new ArrayList<>();
+
 
         //in this case, “this” is the ChatWindow, which is-A Context object
         messageAdapter = new ChatAdapter( this );
@@ -42,17 +46,14 @@ public class ChatWindow extends AppCompatActivity {
 
     }
 
-    private View.OnClickListener mSendListener = v -> {
-        // do something when the button is clicked
-        // Yes we will handle click here but which button clicked??? We don't know
-
+    public void sendChat(View v){
         ChatMessages.add(ChatText.getText().toString());
         messageAdapter.notifyDataSetChanged(); //this restarts the process of getCount()/
         ChatText.setText("");
+    }
 
-    };
 
-   public class ChatAdapter extends ArrayAdapter<String>{
+   public class ChatAdapter extends ArrayAdapter<String> {
 
 
        public ChatAdapter(Context ctx) {
@@ -73,22 +74,22 @@ public class ChatWindow extends AppCompatActivity {
 
            View result = null ;
 
-           if(position%2 == 0)
-
-               result = inflater.inflate(R.layout.chat_row_incoming, null);
-
-           else
+           if(position%2 == 0) {
 
                result = inflater.inflate(R.layout.chat_row_outgoing, null);
+               TextView message = (TextView)result.findViewById(R.id.message_text);
+               message.setText(getItem(position)); // get the string at position
 
-           TextView message = (TextView)result.findViewById(R.id.message_text);
-           message.setText(   getItem(position)  ); // get the string at position
+           }
+           else {
+               result = inflater.inflate(R.layout.chat_row_incoming, null);
+               TextView incoming = (TextView)result.findViewById(R.id.incoming_text);
+               incoming.setText(getItem(position)); // get the string at position
+
+           }
+
            return result;
        }
-
-
-
-
 
    }
 

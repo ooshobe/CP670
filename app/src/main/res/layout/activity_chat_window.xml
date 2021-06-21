@@ -1,38 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ChatWindow"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChatWindow">
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="412dp"
-        android:layout_height="683dp"
-        app:layout_constraintBottom_toTopOf="@+id/ChatBox"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </RelativeLayout>
 
     <Button
         android:id="@+id/SendChat"
         android:layout_width="101dp"
         android:layout_height="41dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="sendChat"
         android:text="@string/SendButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <ListView
+        android:id="@+id/ConversList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+
+    </ListView>
+
     <EditText
         android:id="@+id/ChatBox"
-        android:layout_width="316dp"
-        android:layout_height="48dp"
+        android:layout_width="314dp"
+        android:layout_height="42dp"
+        android:layout_alignLeft="@id/SendChat"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/SendChat"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/SendChat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:inputType="textPersonName" />
+
+
+</RelativeLayout>

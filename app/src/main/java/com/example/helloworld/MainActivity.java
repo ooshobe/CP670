@@ -12,21 +12,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        StartChat = (Button) findViewById(R.id.StartChatButton);
+        StartChat = (Button)findViewById(R.id.StartChatButton);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        StartChat.setOnClickListener(StartChatListener);
-
-
     }
 
-    private View.OnClickListener StartChatListener = v -> {
-        // do something when the button is clicked
-        // Yes we will handle click here but which button clicked??? We don't know
-
-        Intent intent = new Intent(this, ChatWindow.class);
+    public void startChat(View v){
+        Intent intent = new Intent(this,ChatWindow.class);
         startActivity(intent);
-    };
+    }
 }
