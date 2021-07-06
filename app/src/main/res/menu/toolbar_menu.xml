@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_one"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_input_add"
+        android:orderInCategory="101"
+        android:title="@string/one" />
+
+    <item
+        android:id="@+id/action_two"
+        android:icon="@drawable/pokemon"
+        android:orderInCategory="102"
+        android:title="@string/two"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_three"
+        android:icon="@drawable/windows"
+        android:orderInCategory="103"
+        android:title="@string/three"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_four"
+        android:icon="@drawable/mapleleaf"
+        android:orderInCategory="104"
+        android:title="@string/four"
+        app:showAsAction="ifRoom" />
+
+</menu>

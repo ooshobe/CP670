@@ -11,4 +11,22 @@
     <string name="ChatButton">Start Chat</string>
     <string name="SendButton">Send</string>
     <string name="ChatTextBox">Enter Message</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="two">two</string>
+    <string name="one">One</string>
+    <string name="three">three</string>
+    <string name="four">About</string>
+    <string name="start_toolbar">Start Toolbar</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="AlertTitle">Do you want to go back?</string>
+    <string name="messagehint">Enter a new Message</string>
 </resources>
