@@ -10,11 +10,14 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button StartChat;
     Button StartTestToolBar;
+    Button StrtWeatherApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         StartChat = (Button)findViewById(R.id.StartChatButton);
         StartTestToolBar = findViewById(R.id.toolbar_button);
+        StrtWeatherApp = findViewById(R.id.startWeather);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -28,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     public void onTestClick(View view)
     {
         Intent nova = new Intent (this, TestToolbar.class);
+        startActivity(nova);
+    }
+    public void onWeatherClick(View view)
+    {
+        Intent nova = new Intent (this, WeatherForcast.class);
         startActivity(nova);
     }
 }
